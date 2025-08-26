@@ -3,65 +3,37 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import {
     Menu,
     X,
-    Search,
-    User,
     Sparkles,
     ChevronDown,
-    LogOut,
     Palette,
     MessageSquare
 } from "lucide-react";
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ThemeToggleAdvanced } from "@/components/theme-toggle-advanced";
-import { useAuth } from "@/context/AuthContext";
-import { useRouter } from 'next/navigation';
 
 const navigation = [
-    { name: 'Templates', href: '/explore' },
+    { name: 'Features', href: '#features' },
     { name: 'Services', href: '#', hasDropdown: true },
+    { name: 'Work', href: '#showcase' },
     { name: 'Pricing', href: '#pricing' },
-    { name: 'Contact', href: 'mailto:contact@codestamstore.com' },
-    { name: 'About', href: '/about' }
+    { name: 'Contact', href: 'mailto:contact@codestamstore.com' }
 ];
 
+
 const services = [
-    { name: 'Small Business Websites', href: '/explore?category=business', icon: '🏢' },
-    { name: 'E-commerce Stores', href: '/explore?category=ecommerce', icon: '🛒' },
-    { name: 'Portfolio Websites', href: '/explore?category=portfolio', icon: '🎨' },
-    { name: 'SaaS & Apps', href: '/explore?category=saas', icon: '💻' },
-    { name: 'Restaurant Websites', href: '/explore?category=restaurant', icon: '🍽️' },
-    { name: 'Consultant Websites', href: '/explore?category=consultant', icon: '👔' }
+    { name: 'Corporate Conferences', href: '#services', icon: '🏢' },
+    { name: 'Product Launches', href: '#services', icon: '🚀' },
+    { name: 'Trade Shows', href: '#services', icon: '🏬' },
+    { name: 'Community Meetups', href: '#services', icon: '👥' }
 ];
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');
-    const { user, logout } = useAuth();
-    const router = useRouter();
-
-    const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (searchQuery.trim()) {
-            router.push(`/explore?search=${encodeURIComponent(searchQuery.trim().toLowerCase())}`);
-            setSearchQuery('');
-        }
-    };
-
-    const handleSignOut = async () => {
-        try {
-            await logout();
-            router.push('/');
-        } catch (error) {
-            console.error('Sign out error:', error);
-        }
-    };
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -73,22 +45,22 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <Link href="/" className="flex items-center gap-3" title="Codestam Store - Prebuilt Website Templates">
+                    <Link href="/" className="flex items-center gap-3" title="EventCo - Event Management">
                         <div className="relative w-10 h-10 flex-shrink-0">
                             <Image
                                 src="/codestam_logo.png"
-                                alt="Codestam Store - Premium Website Templates and Custom Development Services"
+                                alt="EventCo - Event Management"
                                 fill
                                 className="object-contain"
                                 sizes="40px"
                                 priority
                             />
                         </div>
-                        <span className="font-bold text-xl">Codestam Store</span>
+                        <span className="font-bold text-xl">EventCo</span>
                     </Link>
                     <Badge variant="secondary" className="hidden sm:flex">
                         <Sparkles className="h-3 w-3 mr-1" aria-hidden="true" />
-                        Premium
+                        Events
                     </Badge>
                 </motion.div>
 
@@ -163,61 +135,24 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* Search Bar */}
-                <div className="hidden md:flex items-center gap-4">
-                    <form onSubmit={handleSearch} className="relative">
-                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                        <Input
-                            type="text"
-                            placeholder="Search templates..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            className="pl-10 w-64"
-                            aria-label="Search website templates"
-                        />
-                    </form>
-                </div>
+                {/* Search removed for focused marketing page */}
+                <div className="hidden md:flex items-center gap-4" />
 
                 {/* Right Side */}
                 <div className="flex items-center gap-4">
-                    <ThemeToggleAdvanced />
-
-                    {user ? (
-                        <div className="flex items-center gap-2">
-                            <Link href="/profile">
-                                <Button variant="ghost" size="sm" title="View your profile">
-                                    <User className="h-4 w-4" aria-hidden="true" />
-                                </Button>
-                            </Link>
+                    {/* <ThemeToggleAdvanced /> */}
+                    <div className="hidden md:flex items-center gap-2">
+                        <Link href="mailto:contact@codestamstore.com?subject=Event%20Management%20Inquiry">
                             <Button
-                                variant="ghost"
                                 size="sm"
-                                onClick={handleSignOut}
-                                title="Sign out of your account"
+                                title="Contact us about your event"
+                                aria-label="Get in touch for event management services"
                             >
-                                <LogOut className="h-4 w-4" aria-hidden="true" />
+                                <MessageSquare className="h-4 w-4 mr-2" aria-hidden="true" />
+                                Get Proposal
                             </Button>
-                        </div>
-                    ) : (
-                        <div className="hidden md:flex items-center gap-2">
-                            <Link href="/sign-in">
-                                <Button variant="ghost" size="sm" title="Sign in to your account">
-                                    Sign In
-                                </Button>
-                            </Link>
-                            <Link href="mailto:contact@codestamstore.com?subject=Website Template Inquiry">
-                                <Button
-                                    size="sm"
-                                    effect="ringHover"
-                                    title="Contact us for custom development"
-                                    aria-label="Get in touch for website development services"
-                                >
-                                    <MessageSquare className="h-4 w-4 mr-2" aria-hidden="true" />
-                                    Get Quote
-                                </Button>
-                            </Link>
-                        </div>
-                    )}
+                        </Link>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <Button
@@ -248,19 +183,6 @@ export default function Navbar() {
                         className="md:hidden border-t bg-background"
                     >
                         <div className="px-4 py-6 space-y-4">
-                            {/* Mobile Search */}
-                            <form onSubmit={handleSearch} className="relative">
-                                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                                <Input
-                                    type="text"
-                                    placeholder="Search templates..."
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="pl-10"
-                                    aria-label="Search website templates"
-                                />
-                            </form>
-
                             {/* Mobile Navigation */}
                             <div className="space-y-2">
                                 {navigation.map((item) => (
@@ -315,28 +237,18 @@ export default function Navbar() {
                                     </div>
                                 ))}
                             </div>
-
-                            {/* Mobile Auth */}
-                            {!user && (
-                                <div className="pt-4 border-t space-y-2">
-                                    <Link href="/sign-in">
-                                        <Button variant="ghost" className="w-full" onClick={() => setMobileMenuOpen(false)}>
-                                            Sign In
-                                        </Button>
-                                    </Link>
-                                    <Link href="mailto:contact@codestamstore.com?subject=Website Template Inquiry">
-                                        <Button
-                                            className="w-full"
-                                            effect="ringHover"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                            title="Contact us for custom development"
-                                        >
-                                            <MessageSquare className="h-4 w-4 mr-2" aria-hidden="true" />
-                                            Get Quote
-                                        </Button>
-                                    </Link>
-                                </div>
-                            )}
+                            <div className="pt-4 border-t">
+                                <Link href="mailto:contact@codestamstore.com?subject=Event%20Management%20Inquiry">
+                                    <Button
+                                        className="w-full"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        title="Contact us about your event"
+                                    >
+                                        <MessageSquare className="h-4 w-4 mr-2" aria-hidden="true" />
+                                        Get Proposal
+                                    </Button>
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
                 )}
