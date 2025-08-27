@@ -8,7 +8,7 @@ export default function Collaboration() {
             <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
                 <div className="grid items-center gap-8 sm:grid-cols-2">
                     <div>
-                        <div className="text-xs font-medium text-primary">Let's Work</div>
+                        <div className="text-xs font-medium text-primary">Let&apos;s Work</div>
                         <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">Let’s work together to drive impactful outcomes</h2>
                         <p className="mt-3 text-muted-foreground">Collaborate with our producers and creatives to turn objectives into memorable experiences.</p>
                         <div className="mt-5 flex gap-3">
@@ -30,4 +30,3 @@ export default function Collaboration() {
         </section>
     );
 }
-
