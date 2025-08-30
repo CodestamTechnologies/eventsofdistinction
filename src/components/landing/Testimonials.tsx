@@ -9,11 +9,7 @@ const testimonials = [
 export default function Testimonials() {
     return (
         <section className="mx-auto max-w-6xl px-6 py-12 sm:py-16" id="testimonials">
-            <div className="mb-8 max-w-2xl">
-                <h2 className="text-3xl font-semibold sm:text-4xl">Trusted by teams that ship experiences</h2>
-                <p className="mt-2 text-muted-foreground">From intimate gatherings to arena-scale productions.</p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {testimonials.map((t) => (
                     <Card key={t.name}>
                         <CardContent className="p-6">
