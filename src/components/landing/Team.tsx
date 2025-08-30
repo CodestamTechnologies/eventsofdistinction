@@ -16,11 +16,7 @@ const members: Member[] = [
 export default function Team() {
     return (
         <section id="team" className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
-            <div className="mb-8 text-center">
-                <div className="text-xs font-medium text-primary">Meet Our Team</div>
-                <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">Experienced Team Members</h2>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {members.map((m) => (
                     <div key={m.name} className="rounded-xl border bg-card p-4 text-center">
                         <div className="relative mx-auto mb-3 aspect-square w-28 overflow-hidden rounded-full border">

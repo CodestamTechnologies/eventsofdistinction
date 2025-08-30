@@ -18,7 +18,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navigation = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#', hasDropdown: true },
-    { name: 'Gallery', href: '#gallery' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Blog', href: '/blog' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Contact', href: 'mailto:contact@codestamstore.com' }

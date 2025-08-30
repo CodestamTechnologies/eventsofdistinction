@@ -6,8 +6,6 @@ import Services from "@/components/landing/Services";
 import Collaboration from "@/components/landing/Collaboration";
 import Stats from "@/components/landing/Stats";
 import Showcase from "@/components/landing/Showcase";
-import Team from "@/components/landing/Team";
-import Testimonials from "@/components/landing/Testimonials";
 import Pricing from "@/components/landing/Pricing";
 import FAQ from "@/components/landing/FAQ";
 import Contact from "@/components/landing/Contact";
@@ -26,8 +24,6 @@ export default function Home() {
         <Collaboration />
         <Stats />
         <Showcase />
-        <Team />
-        <Testimonials />
         <Pricing />
         <FAQ />
         <Contact />
