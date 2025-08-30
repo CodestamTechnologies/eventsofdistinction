@@ -16,9 +16,10 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navigation = [
-    { name: 'Features', href: '#features' },
+    { name: 'About', href: '#about' },
     { name: 'Services', href: '#', hasDropdown: true },
-    { name: 'Work', href: '#showcase' },
+    { name: 'Gallery', href: '#gallery' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Contact', href: 'mailto:contact@codestamstore.com' }
 ];

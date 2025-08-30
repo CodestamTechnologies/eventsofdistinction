@@ -14,7 +14,7 @@ export default function AboutBrief() {
                 </div>
                 <div className="relative aspect-square w-full overflow-hidden rounded-xl border">
                     <Image
-                        src={"https://maxm-imggenurl.web.val.run/stylish%20modern%20office%20lobby%20with%20warm%20red%20and%20orange%20accents%2C%20ultra%20high%20definition"}
+                        src={"/images/EOD9.jpg"}
                         alt="Our workspace"
                         fill
                         className="object-cover"

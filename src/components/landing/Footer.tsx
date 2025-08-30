@@ -6,8 +6,9 @@ export default function Footer() {
                     <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} EventCo. All rights reserved.</div>
                     <div className="flex gap-4 text-sm">
                         <a href="#services" className="hover:underline">Services</a>
-                        <a href="#features" className="hover:underline">Features</a>
-                        <a href="#showcase" className="hover:underline">Work</a>
+                        <a href="#about" className="hover:underline">About</a>
+                        <a href="#gallery" className="hover:underline">Gallery</a>
+                        <a href="/blog" className="hover:underline">Blog</a>
                         <a href="#pricing" className="hover:underline">Pricing</a>
                     </div>
                 </div>

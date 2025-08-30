@@ -11,7 +11,7 @@ export default function CompactHero() {
             </p>
             <div className="mt-6 flex items-center justify-center gap-3">
                 <a href="#contact"><Button size="sm">Get started</Button></a>
-                <a href="#features"><Button size="sm" variant="secondary">Learn more</Button></a>
+                <a href="#about"><Button size="sm" variant="secondary">Learn more</Button></a>
             </div>
         </section>
     );

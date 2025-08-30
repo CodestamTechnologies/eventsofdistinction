@@ -32,11 +32,15 @@ export default function Hero() {
                     </Link>
                 </div>
                 <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                    {["stadium event at night with red and orange lighting, ultra high definition", "award ceremony stage with dramatic lights warm palette ultra high definition", "festival crowd wide shot with warm red orange lights ultra high definition"].map((prompt, idx) => (
+                    {[
+                        "/images/EOD1.jpg",
+                        "/images/EOD2.jpg", 
+                        "/images/EOD3.jpg"
+                    ].map((imagePath, idx) => (
                         <div key={idx} className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border">
                             <Image
-                                src={`https://maxm-imggenurl.web.val.run/${encodeURIComponent(prompt)}`}
-                                alt="Event visual"
+                                src={imagePath}
+                                alt={`Event showcase ${idx + 1}`}
                                 fill
                                 className="object-cover"
                                 sizes="(min-width: 640px) 33vw, 100vw"

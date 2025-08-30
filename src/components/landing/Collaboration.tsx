@@ -13,12 +13,12 @@ export default function Collaboration() {
                         <p className="mt-3 text-muted-foreground">Collaborate with our producers and creatives to turn objectives into memorable experiences.</p>
                         <div className="mt-5 flex gap-3">
                             <a href="#contact"><Button size="sm">Start a project</Button></a>
-                            <a href="#showcase"><Button size="sm" variant="secondary">See our work</Button></a>
+                            <a href="#gallery"><Button size="sm" variant="secondary">See our gallery</Button></a>
                         </div>
                     </div>
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border">
                         <Image
-                            src={"https://maxm-imggenurl.web.val.run/handshake%20closeup%20in%20modern%20office%20with%20warm%20red%20and%20orange%20palette%2C%20ultra%20high%20definition"}
+                            src={"/images/EOD3.jpg"}
                             alt="Collaboration"
                             fill
                             className="object-cover"

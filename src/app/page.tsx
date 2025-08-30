@@ -1,7 +1,7 @@
 import Navbar from "@/components/landing/navbar";
 import Hero from "@/components/landing/Hero";
 import AboutBrief from "@/components/landing/AboutBrief";
-import Features from "@/components/landing/Features";
+import About from "@/components/landing/About";
 import Services from "@/components/landing/Services";
 import Collaboration from "@/components/landing/Collaboration";
 import Stats from "@/components/landing/Stats";
@@ -21,7 +21,7 @@ export default function Home() {
       <main>
         <Hero />
         <AboutBrief />
-        <Features />
+        <About />
         <Services />
         <Collaboration />
         <Stats />
